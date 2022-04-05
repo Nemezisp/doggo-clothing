@@ -5,7 +5,7 @@ const categories = [
     {
       id: 1,
       title: 'Sweaters',
-      imageUrl: 'https://images.unsplash.com/photo-1611653101102-469001fe0634?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640'
+      imageUrl: 'https://images.unsplash.com/photo-1488569098285-adeecb95641f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640'
     },
     {
       id: 2,
