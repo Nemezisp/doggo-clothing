@@ -3,7 +3,6 @@ import { createContext, useState } from "react";
 const addCartItem = (cartItems, productToAdd) => {
     let tempCartItems = [...cartItems]
 
-
     for (let item of tempCartItems) {
         if (item.id === productToAdd.id) {
             item.quantity++;
@@ -15,11 +14,29 @@ const addCartItem = (cartItems, productToAdd) => {
     return tempCartItems
 }
 
+const removeCartItem = (cartItems, productToRemove, removeAll) => {
+    let tempCartItems = [...cartItems]
+
+    for (let i = 0; i < tempCartItems.length; i++) {
+        if (tempCartItems[i].id === productToRemove.id) {
+            if (tempCartItems[i].quantity === 1 || removeAll === true) {
+                tempCartItems.splice(i, 1)
+                return tempCartItems
+            } else {
+                tempCartItems[i].quantity--;
+                return tempCartItems
+            }
+        }
+    }
+}
+
 export const CartContext = createContext({
     cartOpen: false,
     setCartOpen: () => {},
     cartItems: [],
-    addItemToCart: () => {}
+    addItemToCart: () => {},
+    removeItemFromCard: () => {},
+    clearItemFromCard: () => {}
 })
 
 export const CartProvider = ({children}) => {
@@ -30,7 +47,15 @@ export const CartProvider = ({children}) => {
         setCartItems(addCartItem(cartItems, productToAdd))
     }
 
-    const value = {cartOpen, setCartOpen, cartItems, addItemToCart}
+    const removeItemFromCart = (productToRemove) => {
+        setCartItems(removeCartItem(cartItems, productToRemove, false))
+    }
+
+    const clearItemFromCard = (productToRemove) => {
+        setCartItems(removeCartItem(cartItems, productToRemove, true))
+    }
+
+    const value = {cartOpen, setCartOpen, cartItems, addItemToCart, removeItemFromCart, clearItemFromCard}
 
     return (
         <CartContext.Provider value={value}>
