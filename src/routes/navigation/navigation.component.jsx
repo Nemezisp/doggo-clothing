@@ -3,13 +3,18 @@ import {Outlet, Link} from 'react-router-dom'
 
 import { ReactComponent as DoggoLogo } from '../../assets/logo.svg'
 import { UserContext } from '../../contexts/user.context'
+import { CartContext } from '../../contexts/cart.context';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
+
+import CartIcon from '../../components/cart-icon/cart-icon.component';
+import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
 import './navigation.styles.scss'
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext)
+    const { cartOpen } = useContext(CartContext)
     
     return (
       <Fragment>
@@ -29,7 +34,9 @@ const Navigation = () => {
                     </Link>
                     )
                 }
+                <CartIcon />
             </div>
+            {cartOpen ? <CartDropdown /> : null}
         </div>
         <Outlet />
       </Fragment>

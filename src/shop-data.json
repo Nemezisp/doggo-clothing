@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Pineapple costume",
+        "imageUrl": "https://images.unsplash.com/photo-1583512603806-077998240c7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&=600&q=80",
+        "price": 40
+    },
+    {
+        "id": 2,
+        "name": "Elf costume",
+        "imageUrl": "https://images.unsplash.com/photo-1583513702439-2e611c58e93d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&=600&q=80",
+        "price": 25
+    },
+    {
+        "id": 3,
+        "name": "Ghost costume",
+        "imageUrl": "https://images.unsplash.com/photo-1633025094151-6fc996255e28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&=600&q=80",
+        "price": 30
+    },
+    {
+        "id": 4,
+        "name": "Prisoner costume",
+        "imageUrl": "https://images.unsplash.com/photo-1603054311650-65211ee04711?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&=600&q=80",
+        "price": 35
+    },
+    {
+        "id": 5,
+        "name": "Gang costume",
+        "imageUrl": "https://images.unsplash.com/photo-1629907710551-e592df0ab1f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&=600&q=80",
+        "price": 40
+    },
+    {
+        "id": 6,
+        "name": "Bee costume",
+        "imageUrl": "https://images.unsplash.com/photo-1614180186384-a8b292b726ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&=600&q=80",
+        "price": 55
+    },
+    {
+        "id": 7,
+        "name": "Yoda costume",
+        "imageUrl": "https://images.unsplash.com/photo-1588617906580-9cd7c75aa886?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&=600&q=80",
+        "price": 49
+    },
+    {
+        "id": 8,
+        "name": "Unicorn costume",
+        "imageUrl": "https://images.unsplash.com/photo-1574287132490-7439fd7750a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&=600&q=80",
+        "price": 39
+    }
+]
