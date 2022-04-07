@@ -7,7 +7,7 @@ import { CartContext } from '../../contexts/cart.context';
 import {CheckoutContainer, CheckoutItemsLabels, CheckoutItemLabel, TotalPriceContainer} from './checkout.styles.jsx'
 
 const Checkout = () => {
-    const {cartItems} = useContext(CartContext)
+    const {cartItems, cartTotal} = useContext(CartContext)
 
     return (
         <CheckoutContainer className='classic-font'>
@@ -32,11 +32,7 @@ const Checkout = () => {
                     cartItems.map(item => <CheckoutItem key={item.id} cartItem={item}/>)
                 }
             <TotalPriceContainer>
-                Total: ${
-                    cartItems.reduce((total, item) => {
-                            return total = total + item.quantity*item.price
-                    }, 0)
-                }
+                Total: ${cartTotal}
             </TotalPriceContainer>
         </CheckoutContainer>
     );

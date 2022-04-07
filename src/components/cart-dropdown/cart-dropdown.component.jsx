@@ -9,12 +9,12 @@ import CartItem from '../cart-item/cart-item.component'
 import { CartContext } from '../../contexts/cart.context'
 
 const CartDropdown = () => {
-    const {cartItems, setCartOpen} = useContext(CartContext)
+    const {cartItems, toggleCartOpen} = useContext(CartContext)
     const navigate = useNavigate()
 
     const navigateToCheckoutHandler = () => {
         navigate('/checkout')
-        setCartOpen(false)
+        toggleCartOpen()
     }
 
     return(

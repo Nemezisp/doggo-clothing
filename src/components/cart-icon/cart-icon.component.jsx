@@ -5,18 +5,16 @@ import { useContext } from 'react'
 import { CartContext } from '../../contexts/cart.context'
 
 const CartIcon = () => {
-    const {cartOpen, setCartOpen, cartItems} = useContext(CartContext)
+    const {cartOpen, toggleCartOpen, cartCount} = useContext(CartContext)
 
-    const toggleCartOpen = () => setCartOpen(!cartOpen)
+    const toggleCart = () => toggleCartOpen(!cartOpen)
 
     return (
-        <CartIconContainer onClick={toggleCartOpen}>
+        <CartIconContainer onClick={toggleCart}>
             <CartLogo className='cart-logo' />
             <ItemCount className='classic-font'>
                 {
-                    cartItems.reduce((total, item) => {
-                        return total = total + item.quantity
-                    }, 0)
+                    cartCount
                 }
             </ItemCount>
         </CartIconContainer>
