@@ -4,43 +4,41 @@ import { useContext } from 'react';
 
 import { CartContext } from '../../contexts/cart.context';
 
-import './checkout.styles.scss'
+import {CheckoutContainer, CheckoutItemsLabels, CheckoutItemLabel, TotalPriceContainer} from './checkout.styles.jsx'
 
 const Checkout = () => {
     const {cartItems} = useContext(CartContext)
 
     return (
-        <div className='checkout-container classic-font'>
-            <div className='checkout-items-labels'>
-                <div className='checkout-item-label'>
+        <CheckoutContainer className='classic-font'>
+            <CheckoutItemsLabels>
+                <CheckoutItemLabel>
                     <span>Product</span>
-                </div>
-                <div className='checkout-item-label'>
+                </CheckoutItemLabel>
+                <CheckoutItemLabel>
                     <span>Name</span>
-                </div>
-                <div className='checkout-item-label'>
+                </CheckoutItemLabel>
+                <CheckoutItemLabel>
                     <span>Quantity</span>
-                </div>
-                <div className='checkout-item-label'>
+                </CheckoutItemLabel>
+                <CheckoutItemLabel>
                     <span>Price</span>
-                </div>
-                <div className='checkout-item-label'>
+                </CheckoutItemLabel>
+                <CheckoutItemLabel>
                     <span>Remove</span>
-                </div>
-            </div>
-            <div className='checkout-items-container'>
+                </CheckoutItemLabel>
+            </CheckoutItemsLabels>
                 {
                     cartItems.map(item => <CheckoutItem key={item.id} cartItem={item}/>)
                 }
-            </div>
-            <div className='total-price-container'>
+            <TotalPriceContainer>
                 Total: ${
                     cartItems.reduce((total, item) => {
                             return total = total + item.quantity*item.price
                     }, 0)
                 }
-            </div>
-        </div>
+            </TotalPriceContainer>
+        </CheckoutContainer>
     );
 }
 

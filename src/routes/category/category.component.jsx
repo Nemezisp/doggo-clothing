@@ -1,4 +1,4 @@
-import './category.styles.scss' 
+import {CategoryPageContainer, CategoryTitle} from './category.styles.jsx' 
 
 import ProductCard from '../../components/product-card/product-card.component';
 
@@ -17,13 +17,13 @@ const Category = () => {
 
     return (
         <Fragment>
-          <h2 className='category-title'>{category.toUpperCase()}</h2>
-          <div className='category-page-container'>
+          <CategoryTitle>{category.toUpperCase()}</CategoryTitle>
+          <CategoryPageContainer>
             {products &&
               products.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
-          </div>
+          </CategoryPageContainer>
         </Fragment>
       );
 };

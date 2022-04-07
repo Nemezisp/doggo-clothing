@@ -1,14 +1,16 @@
-import './category-preview.styles.scss'
+import {Title, Preview, CategoryPreviewContainer} from './category-preview.styles'
+
+import { Link } from 'react-router-dom'
 
 import ProductCard from '../product-card/product-card.component'
 
 const CategoryPreview = ({title, products}) => {
     return (
-        <div className='category-preview-container'>
-            <h2>
-                <span className='title'>{title.toUpperCase()}</span>
-            </h2>
-            <div className='preview'>
+        <CategoryPreviewContainer>
+            <Title>
+                <Link to={title}>{title.toUpperCase()}</Link>
+            </Title>
+            <Preview>
                 {
                     products
                         .filter((_, index) => index < 4 )
@@ -16,8 +18,8 @@ const CategoryPreview = ({title, products}) => {
                             <ProductCard key = {product.id} product={product}/>
                         ))
                 }
-            </div>
-        </div> 
+            </Preview>
+        </CategoryPreviewContainer> 
     )
 }
 
