@@ -2,11 +2,10 @@ import {CartLogo, ItemCount, CartIconContainer} from './cart-icon.styles'
 
 import { useSelector, useDispatch } from 'react-redux'
 
-import { selectCartCount, selectCartOpen } from '../../store/cart/cart.selector'
+import { selectCartCount } from '../../store/cart/cart.selector'
 import { toggleCartOpen } from '../../store/cart/cart.actions'
 
 const CartIcon = () => {
-    const cartOpen = useSelector(selectCartOpen)
     const cartCount = useSelector(selectCartCount)
     const dispatch = useDispatch();
 

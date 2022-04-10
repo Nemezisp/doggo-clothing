@@ -50,8 +50,8 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
     console.log('done')
 }
 
-export const getCategoriesAndDocuments = async () => {
-    const collectionRef = collection(db, 'categories');
+export const getCategoriesAndDocuments = async (name) => {
+    const collectionRef = collection(db, name);
     const q = query(collectionRef)
     const querySnapshot = await getDocs(q)
     return querySnapshot.docs.map((docSnapshot) => docSnapshot.data())
@@ -96,4 +96,17 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
         }
     }
     return userDocRef;
+}
+
+export const getCurrentUser = () => {
+    return new Promise((resolve, reject) => {
+        const unsubscribe = onAuthStateChanged(
+            auth, 
+            (userAuth) => {
+                unsubscribe();
+                resolve(userAuth);
+            },
+            reject
+        )
+    })
 }
