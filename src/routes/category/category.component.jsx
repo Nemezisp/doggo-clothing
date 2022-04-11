@@ -1,7 +1,7 @@
 import {CategoryPageContainer, CategoryTitle} from './category.styles.jsx' 
 
 import ProductCard from '../../components/product-card/product-card.component';
-import Spinner from '../../components/spinner/spinner.styles.jsx';
+import Spinner from '../../components/spinner/spinner.component';
 
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux';
